@@ -5,7 +5,7 @@ import './MemoryCard.css'
 class MemoryCard extends React.Component {
     constructor() {
         super();
-        this.state = { isFlipped: true };
+        this.state = { isFlipped: false };
     }
     // Make MemoryCard return some JSX
     clickHandler = () => {
@@ -14,9 +14,10 @@ class MemoryCard extends React.Component {
 
 
    render() {
+       const innerClass = this.state.isFlipped ? 'MemoryCard__inner flipped' : 'MemoryCard__inner'
        return (
-           <div className="MemoryCard" onClick={ this.MemoryCard }>
-                <div className="MemoryCard__inner">
+           <div className="MemoryCard" onClick={ this.clickHandler }>
+                <div className={innerClass}>
                     <div className="MemoryCard__back">
                         <img alt="" src="https://www.digitalcrafts.com/img/logo-wrench-white.png"></img>
                     </div>
